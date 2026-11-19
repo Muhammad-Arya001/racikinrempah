@@ -1,0 +1,16 @@
+# Kredensial & konfigurasi lokal (JANGAN diunggah)
+config.php
+.env
+
+# Berkas unggahan pengguna
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
+
+# Sistem / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+*.zip

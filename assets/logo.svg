@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Logo RacikInRempah">
+  <defs>
+    <linearGradient id="d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f8540"/><stop offset="1" stop-color="#2c4116"/></linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="15" fill="#F7F2E2" stroke="#B99A5C" stroke-width="2"/>
+  <path d="M30 9 C47 15 51 33 29 53 C11 36 14 17 30 9 Z" fill="url(#d)"/>
+  <path d="M30 14 C29 28 28.5 40 29 50" fill="none" stroke="#F7F2E2" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M29.6 24 L38 19 M29.3 32 L40 26 M29.1 40 L36.5 35 M29.6 28 L22 23 M29.3 36 L20.5 31" stroke="#F7F2E2" stroke-width="1.3" stroke-linecap="round" opacity=".85"/>
+  <polygon points="46.00,35.50 47.76,41.75 53.42,38.58 50.25,44.24 56.50,46.00 50.25,47.76 53.42,53.42 47.76,50.25 46.00,56.50 44.24,50.25 38.58,53.42 41.75,47.76 35.50,46.00 41.75,44.24 38.58,38.58 44.24,41.75" fill="#E3A21A" stroke="#9C5A2E" stroke-width="1.2" stroke-linejoin="round"/>
+  <circle cx="46" cy="46" r="2.6" fill="#9C5A2E"/>
+</svg>

@@ -1,0 +1,43 @@
+<?php
+require __DIR__ . '/../includes/init.php';
+$u = require_role(['admin']);
+
+$jenis = (string) ($_GET['jenis'] ?? 'ringkasan');
+$allowed = ['ringkasan', 'penjualan', 'produk', 'pesanan', 'penjual'];
+if (!in_array($jenis, $allowed, true)) $jenis = 'ringkasan';
+$mulai = (string) ($_GET['mulai'] ?? date('Y-m-01'));
+$akhir = (string) ($_GET['akhir'] ?? date('Y-m-d'));
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $mulai)) $mulai = date('Y-m-01');
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $akhir)) $akhir = date('Y-m-d');
+if ($mulai > $akhir) [$mulai, $akhir] = [$akhir, $mulai];
+
+$awal = $mulai . ' 00:00:00';
+$selesai = date('Y-m-d', strtotime($akhir . ' +1 day')) . ' 00:00:00';
+$filter = 'ps.tanggal >= ? AND ps.tanggal < ? AND ps.status <> \'batal\'';
+
+$ringkasan = row($db, "SELECT COUNT(*) AS pesanan, COALESCE(SUM(ps.total),0) AS omzet, COALESCE(AVG(ps.total),0) AS rata FROM pesanan ps WHERE $filter", 'ss', [$awal,$selesai]);
+$selesaiCount = (int)(row($db, "SELECT COUNT(*) AS n FROM pesanan ps WHERE $filter AND ps.status = 'selesai'", 'ss', [$awal,$selesai])['n'] ?? 0);
+$aktifCount = (int)(row($db, "SELECT COUNT(*) AS n FROM pesanan ps WHERE $filter AND ps.status NOT IN ('selesai','batal')", 'ss', [$awal,$selesai])['n'] ?? 0);
+
+$penjualanHarian = rows($db, "SELECT DATE(ps.tanggal) AS hari, COUNT(*) AS jumlah_pesanan, COALESCE(SUM(ps.total),0) AS omzet FROM pesanan ps WHERE $filter GROUP BY DATE(ps.tanggal) ORDER BY hari DESC", 'ss', [$awal,$selesai]);
+$produkTerjual = rows($db, "SELECT d.id_produk, d.nama_produk, COALESCE(SUM(d.jumlah),0) AS qty, COALESCE(SUM(d.subtotal),0) AS omzet, COALESCE(MAX(u.nama),'Produk tidak aktif') AS penjual FROM detail_pesanan d JOIN pesanan ps ON ps.id_pesanan = d.id_pesanan LEFT JOIN produk p ON p.id_produk = d.id_produk LEFT JOIN users u ON u.id_user = p.id_penjual WHERE ps.tanggal >= ? AND ps.tanggal < ? AND ps.status <> 'batal' GROUP BY d.id_produk, d.nama_produk ORDER BY qty DESC, omzet DESC LIMIT 30", 'ss', [$awal,$selesai]);
+$pesananStatus = rows($db, "SELECT ps.status, COUNT(*) AS jumlah, COALESCE(SUM(ps.total),0) AS nilai FROM pesanan ps WHERE ps.tanggal >= ? AND ps.tanggal < ? GROUP BY ps.status ORDER BY jumlah DESC", 'ss', [$awal,$selesai]);
+$penjualLaporan = rows($db, "SELECT u.id_user, u.nama, COUNT(DISTINCT p.id_produk) AS jumlah_produk, COALESCE(SUM(CASE WHEN ps.status <> 'batal' THEN d.jumlah ELSE 0 END),0) AS unit_terjual, COALESCE(SUM(CASE WHEN ps.status <> 'batal' THEN d.subtotal ELSE 0 END),0) AS omzet FROM users u LEFT JOIN produk p ON p.id_penjual = u.id_user LEFT JOIN detail_pesanan d ON d.id_produk = p.id_produk LEFT JOIN pesanan ps ON ps.id_pesanan = d.id_pesanan AND ps.tanggal >= ? AND ps.tanggal < ? WHERE u.role = 'penjual' GROUP BY u.id_user, u.nama ORDER BY omzet DESC, unit_terjual DESC", 'ss', [$awal,$selesai]);
+
+$judul = 'Laporan Admin';
+include __DIR__ . '/../includes/header.php';
+?>
+<div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3"><div><div class="eyebrow">Analitik Marketplace</div><h1 class="h3 mb-1">Laporan</h1><p class="text-muted mb-0">Gunakan periode untuk melihat penjualan, produk, pesanan, dan performa penjual.</p></div><a href="<?= BASE_URL ?>/admin/dashboard.php" class="btn btn-outline-secondary">← Dashboard</a></div>
+<div class="card border-0 shadow-sm mb-4"><div class="card-body"><form class="row g-2 align-items-end"><div class="col-md-3"><label class="form-label" for="jenis">Jenis Laporan</label><select class="form-select" id="jenis" name="jenis"><option value="ringkasan" <?= $jenis==='ringkasan'?'selected':'' ?>>Ringkasan</option><option value="penjualan" <?= $jenis==='penjualan'?'selected':'' ?>>Penjualan Harian</option><option value="produk" <?= $jenis==='produk'?'selected':'' ?>>Produk Terlaris</option><option value="pesanan" <?= $jenis==='pesanan'?'selected':'' ?>>Status Pesanan</option><option value="penjual" <?= $jenis==='penjual'?'selected':'' ?>>Performa Penjual</option></select></div><div class="col-md-3"><label class="form-label" for="mulai">Mulai</label><input type="date" class="form-control" id="mulai" name="mulai" value="<?= e($mulai) ?>"></div><div class="col-md-3"><label class="form-label" for="akhir">Sampai</label><input type="date" class="form-control" id="akhir" name="akhir" value="<?= e($akhir) ?>"></div><div class="col-md-3"><button class="btn btn-brand w-100">Tampilkan Laporan</button></div></form></div></div>
+
+<?php if ($jenis === 'ringkasan' || $jenis === 'penjualan'): ?>
+<div class="row g-3 mb-4"><div class="col-md-3"><div class="card border-0 shadow-sm"><div class="card-body"><div class="small text-muted">Pesanan</div><div class="fs-3 fw-bold"><?= (int)$ringkasan['pesanan'] ?></div></div></div></div><div class="col-md-3"><div class="card border-0 shadow-sm"><div class="card-body"><div class="small text-muted">Omzet</div><div class="fs-3 fw-bold"><?= rupiah($ringkasan['omzet']) ?></div></div></div></div><div class="col-md-3"><div class="card border-0 shadow-sm"><div class="card-body"><div class="small text-muted">Rata-rata Pesanan</div><div class="fs-3 fw-bold"><?= rupiah($ringkasan['rata']) ?></div></div></div></div><div class="col-md-3"><div class="card border-0 shadow-sm"><div class="card-body"><div class="small text-muted">Selesai</div><div class="fs-3 fw-bold text-success"><?= $selesaiCount ?></div><div class="small text-muted">Aktif: <?= $aktifCount ?></div></div></div></div></div>
+<div class="card border-0 shadow-sm"><div class="card-body p-0"><div class="p-3 border-bottom"><h2 class="h5 mb-0">Penjualan Harian</h2></div><div class="table-responsive"><table class="table align-middle mb-0"><thead class="table-light"><tr><th>Tanggal</th><th class="text-center">Pesanan</th><th class="text-end">Omzet</th></tr></thead><tbody><?php foreach ($penjualanHarian as $r): ?><tr><td><?= e(date('d M Y', strtotime($r['hari']))) ?></td><td class="text-center"><?= (int)$r['jumlah_pesanan'] ?></td><td class="text-end"><?= rupiah($r['omzet']) ?></td></tr><?php endforeach; ?><?php if (!$penjualanHarian): ?><tr><td colspan="3" class="p-4 text-muted">Tidak ada transaksi pada periode ini.</td></tr><?php endif; ?></tbody></table></div></div></div>
+<?php elseif ($jenis === 'produk'): ?>
+<div class="card border-0 shadow-sm"><div class="card-body p-0"><div class="p-3 border-bottom"><h2 class="h5 mb-0">Produk Terlaris</h2></div><div class="table-responsive"><table class="table align-middle mb-0"><thead class="table-light"><tr><th>#</th><th>Produk</th><th>Penjual</th><th class="text-center">Unit Terjual</th><th class="text-end">Nilai</th></tr></thead><tbody><?php $no=1; foreach ($produkTerjual as $r): ?><tr><td><?= $no++ ?></td><td class="fw-semibold"><?= e($r['nama_produk']) ?></td><td><?= e($r['penjual']) ?></td><td class="text-center"><?= (int)$r['qty'] ?></td><td class="text-end"><?= rupiah($r['omzet']) ?></td></tr><?php endforeach; ?><?php if (!$produkTerjual): ?><tr><td colspan="5" class="p-4 text-muted">Belum ada penjualan produk pada periode ini.</td></tr><?php endif; ?></tbody></table></div></div></div>
+<?php elseif ($jenis === 'pesanan'): ?>
+<div class="card border-0 shadow-sm"><div class="card-body p-0"><div class="p-3 border-bottom"><h2 class="h5 mb-0">Rekap Status Pesanan</h2></div><div class="table-responsive"><table class="table align-middle mb-0"><thead class="table-light"><tr><th>Status</th><th class="text-center">Jumlah</th><th class="text-end">Nilai Pesanan</th></tr></thead><tbody><?php foreach ($pesananStatus as $r): ?><tr><td><?= status_badge($r['status']) ?></td><td class="text-center"><?= (int)$r['jumlah'] ?></td><td class="text-end"><?= rupiah($r['nilai']) ?></td></tr><?php endforeach; ?><?php if (!$pesananStatus): ?><tr><td colspan="3" class="p-4 text-muted">Belum ada pesanan pada periode ini.</td></tr><?php endif; ?></tbody></table></div></div></div>
+<?php else: ?>
+<div class="card border-0 shadow-sm"><div class="card-body p-0"><div class="p-3 border-bottom"><h2 class="h5 mb-0">Performa Penjual</h2></div><div class="table-responsive"><table class="table align-middle mb-0"><thead class="table-light"><tr><th>Penjual</th><th class="text-center">Produk</th><th class="text-center">Unit Terjual</th><th class="text-end">Omzet</th></tr></thead><tbody><?php foreach ($penjualLaporan as $r): ?><tr><td class="fw-semibold"><?= e($r['nama']) ?></td><td class="text-center"><?= (int)$r['jumlah_produk'] ?></td><td class="text-center"><?= (int)$r['unit_terjual'] ?></td><td class="text-end"><?= rupiah($r['omzet']) ?></td></tr><?php endforeach; ?><?php if (!$penjualLaporan): ?><tr><td colspan="4" class="p-4 text-muted">Belum ada penjual.</td></tr><?php endif; ?></tbody></table></div></div></div>
+<?php endif; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

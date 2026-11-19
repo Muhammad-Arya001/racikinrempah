@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1490" viewBox="0 0 980 1490" font-family="DejaVu Sans, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect width="980" height="1490" fill="#fff"/>
+<text x="490.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Alur Proses Transaksi — Dari Memilih Produk sampai Pesanan Dibuat</text>
+<rect x="260" y="60" width="140" height="40" rx="20" fill="#6d1a2b"/>
+<text x="330" y="84.0" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Mulai</text>
+<line x1="330" y1="100" x2="330" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="130" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="154.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Pembeli membuka halaman</text>
+<text x="330" y="170.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Daftar Produk (index.php)</text>
+<line x1="330" y1="186" x2="330" y2="216" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="216" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="240.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Memilih produk → melihat</text>
+<text x="330" y="256.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Detail Produk (produk.php)</text>
+<line x1="330" y1="272" x2="330" y2="302" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="302" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="326.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Klik &quot;Tambah ke Keranjang&quot;</text>
+<text x="330" y="342.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">(keranjang_tambah.php)</text>
+<line x1="330" y1="358" x2="330" y2="388" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<polygon points="330,388 520.0,423.0 330,458 140.0,423.0" fill="#fff4dd" stroke="#a8841c" stroke-width="1.5"/>
+<text x="330" y="427.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Sudah login?</text>
+<line x1="520.0" y1="423.0" x2="640.0" y2="423.0" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="530.0" y="417.0" font-size="11.5" font-weight="bold" fill="#b91c1c">Tidak</text>
+<rect x="640.0" y="395.0" width="300" height="56" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="790" y="419.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">Login / Daftar dulu,</text>
+<text x="790" y="435.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">lalu kembali ke langkah ini</text>
+<line x1="330" y1="458" x2="330" y2="488" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="338" y="475" font-size="11.5" font-weight="bold" fill="#15803d">Ya</text>
+<polygon points="330,488 520.0,524.0 330,560 140.0,524.0" fill="#fff4dd" stroke="#a8841c" stroke-width="1.5"/>
+<text x="330" y="520.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Stok produk &gt; 0 dan</text>
+<text x="330" y="536.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">bukan produk sendiri?</text>
+<line x1="520.0" y1="524.0" x2="640.0" y2="524.0" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="530.0" y="518.0" font-size="11.5" font-weight="bold" fill="#b91c1c">Tidak</text>
+<rect x="640.0" y="496.0" width="300" height="56" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="790" y="520.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">Tampilkan pesan peringatan,</text>
+<text x="790" y="536.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">kembali ke detail produk</text>
+<line x1="330" y1="560" x2="330" y2="590" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="338" y="577" font-size="11.5" font-weight="bold" fill="#15803d">Ya</text>
+<rect x="140.0" y="590" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="614.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Simpan / perbarui baris</text>
+<text x="330" y="630.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">di tabel keranjang</text>
+<line x1="330" y1="646" x2="330" y2="676" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="676" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="700.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Buka Keranjang (keranjang.php):</text>
+<text x="330" y="716.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">ubah jumlah atau hapus item</text>
+<line x1="330" y1="732" x2="330" y2="762" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="762" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="786.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Klik Checkout (checkout.php),</text>
+<text x="330" y="802.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">isi data penerima</text>
+<line x1="330" y1="818" x2="330" y2="848" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<polygon points="330,848 520.0,883.0 330,918 140.0,883.0" fill="#fff4dd" stroke="#a8841c" stroke-width="1.5"/>
+<text x="330" y="887.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Data penerima valid?</text>
+<line x1="520.0" y1="883.0" x2="640.0" y2="883.0" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="530.0" y="877.0" font-size="11.5" font-weight="bold" fill="#b91c1c">Tidak</text>
+<rect x="640.0" y="855.0" width="300" height="56" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="790" y="879.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">Tampilkan pesan error,</text>
+<text x="790" y="895.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">isi ulang formulir</text>
+<line x1="330" y1="918" x2="330" y2="948" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="338" y="935" font-size="11.5" font-weight="bold" fill="#15803d">Ya</text>
+<rect x="140.0" y="948" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="972.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">BEGIN TRANSACTION</text>
+<text x="330" y="988.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">SELECT stok ... FOR UPDATE</text>
+<line x1="330" y1="1004" x2="330" y2="1034" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<polygon points="330,1034 520.0,1070.0 330,1106 140.0,1070.0" fill="#fff4dd" stroke="#a8841c" stroke-width="1.5"/>
+<text x="330" y="1066.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Stok semua item</text>
+<text x="330" y="1082.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">cukup?</text>
+<line x1="520.0" y1="1070.0" x2="640.0" y2="1070.0" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="530.0" y="1064.0" font-size="11.5" font-weight="bold" fill="#b91c1c">Tidak</text>
+<rect x="640.0" y="1042.0" width="300" height="56" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="790" y="1066.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">ROLLBACK + pesan error,</text>
+<text x="790" y="1082.0" text-anchor="middle" font-size="12" fill="#7f1d1d" font-weight="normal">kembali ke Keranjang</text>
+<line x1="330" y1="1106" x2="330" y2="1136" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="338" y="1123" font-size="11.5" font-weight="bold" fill="#15803d">Ya</text>
+<rect x="140.0" y="1136" width="380" height="72" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="1160.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">INSERT pesanan (status: menunggu)</text>
+<text x="330" y="1176.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">INSERT detail_pesanan per item</text>
+<text x="330" y="1192.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">UPDATE produk: stok = stok − jumlah</text>
+<line x1="330" y1="1208" x2="330" y2="1238" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="1238" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="1262.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">DELETE keranjang milik pembeli</text>
+<text x="330" y="1278.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">COMMIT</text>
+<line x1="330" y1="1294" x2="330" y2="1324" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="140.0" y="1324" width="380" height="56" rx="6" fill="#fbf3e4" stroke="#6d1a2b" stroke-width="1.5"/>
+<text x="330" y="1348.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">Tampilkan Detail Pesanan</text>
+<text x="330" y="1364.0" text-anchor="middle" font-size="12.5" fill="#222" font-weight="normal">(kode INVyymmdd..., status: menunggu)</text>
+<line x1="330" y1="1380" x2="330" y2="1410" stroke="#555" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="260" y="1410" width="140" height="40" rx="20" fill="#6d1a2b"/>
+<text x="330" y="1434.0" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold">Selesai</text>
+</svg>

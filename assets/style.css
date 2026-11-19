@@ -1,0 +1,180 @@
+/* Tema: Serai Semilir Tropika (versi kontras) */
+:root {
+    --jerami: #B99A5C;         /* Cahaya Jerami: tombol aksi, aksen */
+    --vanila: #DFCB8F;         /* Pesona Vanila: aksen terang, garis, brand */
+    --belukar: #5F7136;        /* Hijau Belukar: navbar, harga, pendukung */
+    --lumut: #1F2F0E;          /* Lumut Basah: teks utama, footer */
+
+    --putih: #FBF8EE;          /* turunan: tint vanila sangat terang untuk latar */
+    --belukar-deep: #3d4f22;   /* turunan: hijau lebih dalam untuk gambar & hover */
+    --vanila-soft: #EDE5C8;    /* turunan: header tabel, label */
+    --garis: #DCD3B4;          /* turunan: border halus */
+    --belukar-dark: #4b5a2a;   /* turunan: hover hijau */
+    --jerami-hover: #cdb06f;   /* turunan: hover tombol */
+
+    --bs-body-bg: var(--putih);
+    --bs-body-color: var(--lumut);
+    --bs-secondary-color: rgba(31, 47, 14, .68);
+    --bs-border-color: var(--garis);
+    --bs-link-color: var(--belukar);
+    --bs-link-hover-color: var(--lumut);
+}
+body { background-color: var(--putih); color: var(--lumut); }
+a { color: var(--belukar); }
+a:hover { color: var(--lumut); }
+.text-muted, .text-secondary { color: rgba(31, 47, 14, .68) !important; }
+
+/* Navbar */
+.bg-brand { background-color: var(--lumut); border-bottom: 3px solid var(--jerami); }
+.navbar .navbar-brand { color: var(--vanila); letter-spacing: .3px; font-weight: 800; }
+.navbar .navbar-brand:hover { color: #fff; }
+.brand-in { color: #fff; font-weight: 600; font-size: .85em; margin: 0 1px; }
+.navbar .nav-link { color: rgba(251, 248, 238, .85); }
+.navbar .nav-link:hover { color: var(--vanila); }
+.navbar .badge.bg-warning { background-color: var(--vanila) !important; }
+
+/* Tombol */
+.btn-brand { background-color: var(--belukar); border-color: var(--belukar); color: #fff; font-weight: 600; }
+.btn-brand:hover, .btn-brand:focus { background-color: var(--lumut); border-color: var(--lumut); color: var(--vanila); }
+.btn-brand:disabled { background-color: #ddd8c4; border-color: #ddd8c4; color: #8a8a74; }
+.btn-gold { background-color: var(--jerami); border-color: var(--jerami); color: var(--lumut); font-weight: 600; } /* tombol Daftar di navbar */
+.btn-gold:hover { background-color: var(--vanila); border-color: var(--vanila); color: var(--lumut); }
+.btn-outline-primary { --bs-btn-color: var(--belukar); --bs-btn-border-color: var(--belukar); --bs-btn-hover-bg: var(--belukar); --bs-btn-hover-color: #fff; --bs-btn-hover-border-color: var(--belukar); --bs-btn-active-bg: var(--belukar-dark); --bs-btn-active-color: #fff; --bs-btn-active-border-color: var(--belukar-dark); }
+.btn-outline-secondary { --bs-btn-color: var(--lumut); --bs-btn-border-color: #c4bb98; --bs-btn-hover-bg: var(--vanila-soft); --bs-btn-hover-color: var(--lumut); --bs-btn-hover-border-color: var(--jerami); }
+.btn-outline-light { --bs-btn-color: #fff; --bs-btn-border-color: rgba(255, 255, 255, .6); --bs-btn-hover-bg: #fff; --bs-btn-hover-color: var(--belukar-dark); --bs-btn-hover-border-color: #fff; }
+.btn-link { color: var(--belukar); }
+
+/* Permukaan */
+.card { --bs-card-bg: #fffdf6; --bs-card-border-color: var(--garis); }
+.bg-white { background-color: #fffdf6 !important; }
+.table { --bs-table-border-color: var(--garis); }
+.table-light { --bs-table-bg: var(--vanila-soft); --bs-table-color: var(--lumut); --bs-table-border-color: var(--garis); }
+.shadow-sm { box-shadow: 0 2px 8px rgba(31, 47, 14, .10) !important; }
+
+/* Warna semantik disesuaikan tema */
+.text-success { color: var(--belukar) !important; }
+.badge.bg-warning, .text-bg-warning { background-color: var(--jerami) !important; color: var(--lumut) !important; }
+.text-bg-light { background-color: var(--vanila-soft) !important; color: var(--belukar-dark) !important; }
+.text-bg-secondary { background-color: var(--belukar) !important; color: #fff !important; }
+
+/* Formulir */
+.form-control:focus, .form-select:focus { border-color: var(--belukar); box-shadow: 0 0 0 .2rem rgba(95, 113, 54, .25); }
+.form-control::placeholder { color: rgba(31, 47, 14, .45); }
+
+/* Navigasi lain */
+.page-link { color: var(--belukar); border-color: var(--garis); }
+.page-link:hover { background-color: var(--vanila-soft); color: var(--lumut); }
+.page-item.active .page-link { background-color: var(--belukar); border-color: var(--belukar); color: #fff; }
+.breadcrumb-item.active { color: rgba(31, 47, 14, .6); }
+footer.bg-dark { background-color: var(--lumut) !important; border-top: 3px solid var(--jerami); }
+footer .small, footer span { color: rgba(247, 242, 226, .72); }
+
+/* Banner */
+.hero-banner {
+    background: linear-gradient(135deg, var(--belukar), var(--lumut));
+    border-bottom: 4px solid var(--jerami);
+    color: var(--putih);
+}
+.hero-banner h1 { color: var(--vanila); }
+
+/* Kartu produk */
+.produk-card { transition: transform .15s, box-shadow .15s, border-color .15s; border: 1px solid var(--garis); box-shadow: 0 1px 4px rgba(31, 47, 14, .08); }
+.produk-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(31, 47, 14, .16); border-color: var(--jerami); }
+.produk-card .card-title a { color: var(--lumut); text-decoration: none; }
+.produk-card .card-title a:hover { color: var(--belukar); }
+.produk-card img, .produk-card .img-placeholder { height: 180px; width: 100%; object-fit: cover; }
+
+.img-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--belukar-deep), var(--lumut));
+    color: var(--vanila); font-size: 3rem; font-weight: 700;
+}
+.img-detail { width: 100%; max-height: 420px; object-fit: cover; border-radius: .5rem; border: 2px solid var(--jerami); }
+.img-placeholder.img-detail { height: 360px; }
+.img-thumb { width: 56px; height: 56px; object-fit: cover; border-radius: .375rem; }
+.img-placeholder.img-thumb { font-size: 1.4rem; }
+.qty-input { max-width: 90px; }
+
+/* Diskon */
+.promo-chip { background: var(--vanila-soft); border: 1px dashed var(--jerami); border-radius: .5rem; padding: .6rem .5rem; color: var(--lumut); }
+.promo-chip strong { color: var(--belukar); font-size: 1.05rem; }
+.promo-hint { background: var(--vanila-soft); border-left: 4px solid var(--jerami); border-radius: .25rem; padding: .5rem .75rem; font-size: .9rem; }
+.diskon-baris { color: var(--belukar); font-weight: 600; }
+
+/* ===== Beranda bergaya alam + rempah ===== */
+:root {
+    --kunyit: #E3A21A;         /* rempah: kunyit (tombol utama) */
+    --kunyit-hover: #f0b438;
+    --kayu-manis: #9C5A2E;     /* rempah: kayu manis (label, harga) */
+    --cabai: #B5382A;          /* rempah: cabai (aksen kategori makanan) */
+}
+.bg-brand { border-bottom-color: var(--kunyit); }
+.btn-gold { background-color: var(--kunyit); border-color: var(--kunyit); color: var(--lumut); font-weight: 700; }
+.btn-gold:hover { background-color: var(--kunyit-hover); border-color: var(--kunyit-hover); color: var(--lumut); }
+.btn-kunyit { background-color: var(--kunyit); border-color: var(--kunyit); color: var(--lumut); font-weight: 800; border-radius: 50rem; padding: .8rem 1.7rem; box-shadow: 0 6px 16px rgba(227, 162, 26, .35); }
+.btn-kunyit:hover { background-color: var(--kunyit-hover); border-color: var(--kunyit-hover); color: var(--lumut); transform: translateY(-1px); }
+.text-success { color: var(--kayu-manis) !important; }
+.diskon-baris { color: var(--belukar); }
+.navbar .badge.bg-warning { background-color: var(--kunyit) !important; }
+.card, .table-responsive, .promo-hint { border-radius: .75rem; }
+
+/* Logo */
+.brand-wrap { display: flex; align-items: center; gap: .6rem; }
+.brand-ikon { font-size: 1.7rem; line-height: 1; }
+.brand-teks { display: flex; flex-direction: column; line-height: 1.05; }
+.brand-nama { font-size: 1.25rem; }
+.brand-tag { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(247, 242, 226, .65); font-weight: 500; }
+
+/* Judul seksi */
+.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--kayu-manis); }
+.eyebrow-terang { color: var(--kunyit); }
+.judul-seksi { font-weight: 800; color: var(--lumut); letter-spacing: -.01em; }
+
+/* Hero */
+.hero-foto {
+    position: relative; display: flex; align-items: center; min-height: 440px;
+    border-radius: 1.25rem; overflow: hidden; color: #fff;
+    background:
+        linear-gradient(90deg, rgba(18, 30, 8, .85) 0%, rgba(18, 30, 8, .55) 45%, rgba(18, 30, 8, .10) 100%),
+        var(--hero-foto, none),
+        radial-gradient(circle at 82% 22%, rgba(227, 162, 26, .55), transparent 42%),
+        radial-gradient(circle at 70% 85%, rgba(181, 56, 42, .35), transparent 40%),
+        linear-gradient(135deg, #46592a, #1F2F0E);
+    background-size: cover; background-position: center;
+    box-shadow: 0 14px 32px rgba(31, 47, 14, .28);
+}
+.hero-isi { padding: 2.5rem clamp(1.5rem, 5vw, 4rem); max-width: 640px; }
+.hero-eyebrow { display: inline-block; font-size: .78rem; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; color: var(--kunyit); margin-bottom: .9rem; }
+.hero-judul { font-size: clamp(2.3rem, 5.5vw, 3.9rem); font-weight: 800; line-height: 1.03; letter-spacing: -.02em; margin-bottom: 1rem; }
+.hero-sub { font-size: 1.1rem; color: rgba(255, 255, 255, .92); margin-bottom: 1.6rem; }
+
+/* Kartu kategori */
+.kat-card {
+    position: relative; display: block; height: 178px; border-radius: 1rem; overflow: hidden; color: #fff; text-decoration: none;
+    background: linear-gradient(to top, rgba(10, 18, 5, .78), rgba(10, 18, 5, 0) 62%), var(--foto, none), var(--fb);
+    background-size: cover; background-position: center;
+    box-shadow: 0 4px 14px rgba(31, 47, 14, .2); transition: transform .18s, box-shadow .18s;
+}
+.kat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(31, 47, 14, .3); color: #fff; }
+.kat-nama { position: absolute; left: 1rem; bottom: .85rem; right: 1rem; font-weight: 700; font-size: 1.05rem; text-shadow: 0 1px 4px rgba(0, 0, 0, .5); }
+.kat-ikon { position: absolute; top: .55rem; right: .9rem; font-size: 2.2rem; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .4)); }
+.kat-minuman { --fb: linear-gradient(135deg, #c8791f, #6e3a12); }   /* jahe & kayu manis */
+.kat-makanan { --fb: linear-gradient(135deg, #b5382a, #5a1a10); }   /* cabai & rendang */
+.kat-bumbu   { --fb: linear-gradient(135deg, #e3a21a, #8a5a0c); }   /* kunyit */
+.kat-rempah  { --fb: linear-gradient(135deg, #5F7136, #1F2F0E); }   /* daun & akar */
+
+/* Panel diskon */
+.promo-panel { background: linear-gradient(135deg, var(--belukar-deep), var(--lumut)); color: #fff; border-radius: 1.1rem; padding: 1.75rem clamp(1.25rem, 4vw, 2.25rem); border-bottom: 4px solid var(--kunyit); }
+.promo-tier { background: rgba(255, 255, 255, .08); border: 1px solid rgba(227, 162, 26, .55); border-radius: .75rem; padding: .85rem .4rem; }
+.promo-tier .persen { display: block; font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; color: var(--kunyit); line-height: 1.1; }
+.promo-tier small { color: rgba(255, 255, 255, .85); }
+
+/* Nilai */
+.nilai-card { background: #fffdf6; border: 1px solid var(--garis); border-radius: 1rem; padding: 1.4rem 1rem; height: 100%; }
+.nilai-ikon { font-size: 2rem; margin-bottom: .4rem; }
+
+/* Logo gambar */
+.brand-logo { width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0, 0, 0, .3); }
+
+/* Huruf placeholder di dalam tautan tidak bergaris bawah */
+.produk-card > a, .produk-card > a:hover, .img-placeholder { text-decoration: none; }

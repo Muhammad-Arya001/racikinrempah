@@ -1,0 +1,56 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Mockup UI — Pasar Nusantara</title>
+<style>
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:#eee;margin:0;padding:24px;color:#333}
+.screen{width:1000px;margin:0 auto 32px;background:#fbf3e4;border:2px solid #999;border-radius:8px;overflow:hidden}
+.cap{width:1000px;margin:0 auto 6px;font-weight:bold;color:#555}
+.bar{background:#ddd;padding:6px 12px;font-size:12px;color:#666}
+.nav{background:#6d1a2b;border-bottom:3px solid #c9a227;color:#fff;padding:12px 20px;display:flex;gap:20px;align-items:center;font-size:14px}
+.nav b{color:#e6c65a;font-size:17px;margin-right:auto}.pad{padding:20px}
+.hero{background:linear-gradient(135deg,#4a0f1c,#6d1a2b);border-bottom:4px solid #c9a227;color:#f1e3c6;padding:18px;border-radius:8px;margin-bottom:14px}
+.row{display:flex;gap:10px;margin-bottom:16px}.in{flex:1;border:1px solid #bbb;background:#fff;padding:8px;border-radius:4px;color:#999;font-size:13px}
+.btn{background:#6d1a2b;color:#fff;padding:8px 14px;border-radius:4px;font-size:13px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:#fff;border-radius:6px;box-shadow:0 1px 4px #0002;overflow:hidden}
+.img{height:110px;background:linear-gradient(135deg,#f1e3c6,#c9a227);color:#6d1a2b;font-size:36px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+.cb{padding:10px;font-size:12px}.badge{background:#eee;padding:2px 6px;border-radius:3px;font-size:10px}
+.price{color:#6d1a2b;font-weight:bold;font-size:14px;margin:4px 0}
+.pg{text-align:center;margin-top:16px;font-size:13px;color:#6d1a2b}
+.two{display:flex;gap:24px}.two>div{flex:1}
+.big{height:300px;font-size:90px;border-radius:8px}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}th{background:#f1e3c6}
+.thumb{width:40px;height:40px;display:inline-block;vertical-align:middle;margin-right:8px;font-size:16px;border-radius:4px;background:#c9a227}
+.qty{border:1px solid #bbb;width:50px;padding:4px;border-radius:3px;background:#fff}
+</style></head><body>
+
+<div class="cap">Mockup 1 — Daftar Produk (index.php)</div>
+<div class="screen" id="s1"><div class="bar">🔒 https://namasitus.infinityfreeapp.com/index.php</div>
+<div class="nav"><b>🛖 Pasar Nusantara</b><span>Produk</span><span>🛒 Keranjang (2)</span><span>Masuk</span><span class="btn" style="background:#c9a227;color:#000">Daftar</span></div>
+<div class="pad"><div class="hero"><b style="font-size:18px">Produk Tradisional Pilihan</b><br><small>Kuliner, kerajinan, kain, dan rempah dari penjual lokal.</small></div>
+<div class="row"><div class="in" style="flex:3">Cari produk…</div><div class="in">Semua kategori ▾</div><div class="btn">Cari</div></div>
+<div class="grid">
+<div class="card"><div class="img">K</div><div class="cb"><span class="badge">Kuliner</span><div><b>Keripik Tempe 250 gr</b></div><div class="price">Rp 18.000</div><small>Toko Sari Rasa · Stok 50</small><div class="btn" style="margin-top:8px">+ Keranjang</div></div></div>
+<div class="card"><div class="img">D</div><div class="cb"><span class="badge">Kuliner</span><div><b>Dodol Durian 500 gr</b></div><div class="price">Rp 45.000</div><small>Toko Sari Rasa · Stok 30</small><div class="btn" style="margin-top:8px">+ Keranjang</div></div></div>
+<div class="card"><div class="img">T</div><div class="cb"><span class="badge">Kerajinan</span><div><b>Tikar Pandan 1x2 m</b></div><div class="price">Rp 85.000</div><small>Toko Sari Rasa · Stok 12</small><div class="btn" style="margin-top:8px">+ Keranjang</div></div></div>
+<div class="card"><div class="img">B</div><div class="cb"><span class="badge">Kain</span><div><b>Batik Tulis Besurek</b></div><div class="price">Rp 275.000</div><small>Toko Sari Rasa · Stok 8</small><div class="btn" style="margin-top:8px">+ Keranjang</div></div></div>
+</div><div class="pg">‹ 1 &nbsp; 2 &nbsp; 3 ›</div></div></div>
+
+<div class="cap">Mockup 2 — Detail Produk (produk.php?id=…)</div>
+<div class="screen" id="s2"><div class="bar">🔒 https://namasitus.infinityfreeapp.com/produk.php?id=6</div>
+<div class="nav"><b>🛖 Pasar Nusantara</b><span>Produk</span><span>🛒 Keranjang (2)</span><span>Budi Pembeli</span><span class="btn" style="background:none;border:1px solid #fff">Keluar</span></div>
+<div class="pad"><small style="color:#6d1a2b">Produk / Pakaian &amp; Kain / Batik Tulis Besurek</small><br><br>
+<div class="two"><div><div class="img big">B</div></div>
+<div><h2 style="margin:0 0 6px">Batik Tulis Besurek (kain 2 m)</h2><div class="price" style="font-size:30px">Rp 275.000</div>
+<table style="margin:12px 0"><tr><td><b>Kategori</b></td><td>Pakaian &amp; Kain</td></tr><tr><td><b>Penjual</b></td><td>Toko Sari Rasa</td></tr><tr><td><b>Stok</b></td><td style="color:#6d1a2b">8 tersedia</td></tr></table>
+<p style="color:#666;font-size:14px;line-height:1.5">Kain batik Besurek motif kaligrafi khas Bengkulu, pewarna alami.</p>
+<div style="display:flex;gap:10px;align-items:center;margin-top:18px"><div class="qty">1</div><div class="btn" style="padding:12px 20px">Tambah ke Keranjang</div></div></div></div></div></div>
+
+<div class="cap">Mockup 3 — Keranjang Belanja (keranjang.php)</div>
+<div class="screen" id="s3"><div class="bar">🔒 https://namasitus.infinityfreeapp.com/keranjang.php</div>
+<div class="nav"><b>🛖 Pasar Nusantara</b><span>Produk</span><span>🛒 Keranjang (3)</span><span>Budi Pembeli</span><span class="btn" style="background:none;border:1px solid #fff">Keluar</span></div>
+<div class="pad"><h2 style="margin-top:0">Keranjang Belanja</h2>
+<div class="two"><div style="flex:2"><table><tr><th>Produk</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th></th></tr>
+<tr><td><span class="thumb"></span>Keripik Tempe 250 gr</td><td>Rp 18.000</td><td><span class="qty">2</span></td><td>Rp 36.000</td><td style="color:#c00">✕</td></tr>
+<tr><td><span class="thumb"></span>Gula Aren 500 gr</td><td>Rp 24.000</td><td><span class="qty">1</span></td><td>Rp 24.000</td><td style="color:#c00">✕</td></tr></table>
+<br><span class="btn" style="background:#fff;color:#333;border:1px solid #999">Perbarui Jumlah</span> <small style="color:#6d1a2b;margin-left:10px">← Lanjut belanja</small></div>
+<div><div class="card" style="padding:16px"><b>Ringkasan</b><div style="display:flex;justify-content:space-between;margin:14px 0"><span>Total</span><b class="price" style="font-size:18px">Rp 60.000</b></div><div class="btn" style="padding:12px;font-size:15px">Checkout</div></div></div></div></div></div>
+</body></html>

@@ -1,0 +1,13 @@
+{
+  "id_user": 3,
+  "nama_penerima": "Budi Pembeli",
+  "alamat_kirim": "Jl. Melati No. 12, Bengkulu",
+  "no_hp": "081200000003",
+  "catatan": "Tolong dikemas rapi",
+  "items": [
+    {
+      "id_produk": 5,
+      "jumlah": 9999
+    }
+  ]
+}

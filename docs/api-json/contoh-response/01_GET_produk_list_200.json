@@ -1,0 +1,248 @@
+{
+  "_catatan": "CONTOH dari data seed database.sql. Untuk laporan, gunakan response asli dari XAMPP Anda.",
+  "status": "success",
+  "message": "Daftar produk berhasil diambil",
+  "data": {
+    "total": 14,
+    "produk": [
+      {
+        "id": 1,
+        "nama": "Wedang Jahe Instan 10 Sachet",
+        "deskripsi": "Wedang jahe merah instan, hangat dan pedas manis. Seduh dengan air panas, cocok diminum saat cuaca dingin.",
+        "harga": 28000.0,
+        "stok": 60,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 1,
+          "nama": "Minuman Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 2,
+        "nama": "Bandrek Khas Sunda 200 gr",
+        "deskripsi": "Racikan bandrek dari jahe, kayu manis, cengkeh, dan gula aren. Seduh panas, nikmat bersama kelapa muda.",
+        "harga": 30000.0,
+        "stok": 45,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 1,
+          "nama": "Minuman Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 3,
+        "nama": "Wedang Uwuh Daun Rempah 150 gr",
+        "deskripsi": "Campuran secang, jahe, kayu manis, cengkeh, dan daun pala. Seduhan berwarna merah dengan aroma hangat.",
+        "harga": 26000.0,
+        "stok": 40,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 1,
+          "nama": "Minuman Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 4,
+        "nama": "Beras Kencur Siap Seduh 200 gr",
+        "deskripsi": "Serbuk beras kencur tradisional, segar dan menenangkan. Larutkan dalam air hangat atau dingin.",
+        "harga": 24000.0,
+        "stok": 50,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 1,
+          "nama": "Minuman Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 5,
+        "nama": "Rendang Daging Kering 250 gr",
+        "deskripsi": "Rendang kering dimasak lama dengan santan dan rempah lengkap. Tahan lama, siap santap.",
+        "harga": 95000.0,
+        "stok": 20,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 2,
+          "nama": "Makanan Kaya Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 6,
+        "nama": "Sambal Rica-Rica Rempah 200 gr",
+        "deskripsi": "Sambal rica-rica pedas gurih dengan serai, jahe, dan daun jeruk. Cocok untuk ayam atau ikan.",
+        "harga": 35000.0,
+        "stok": 35,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 2,
+          "nama": "Makanan Kaya Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 7,
+        "nama": "Kerupuk Bumbu Rempah 200 gr",
+        "deskripsi": "Kerupuk renyah dengan taburan bumbu rempah, gurih dan harum. Teman makan yang pas.",
+        "harga": 20000.0,
+        "stok": 60,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 2,
+          "nama": "Makanan Kaya Rempah"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 8,
+        "nama": "Bumbu Rendang Instan 150 gr",
+        "deskripsi": "Bumbu lengkap rendang: cabai, lengkuas, kunyit, serai, dan rempah pilihan. Tinggal tumis dan masak.",
+        "harga": 22000.0,
+        "stok": 50,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 3,
+          "nama": "Bumbu Racik"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 9,
+        "nama": "Bumbu Soto Kuning 100 gr",
+        "deskripsi": "Bumbu dasar soto kuning dengan kunyit, jahe, dan kemiri. Aroma khas, praktis dipakai.",
+        "harga": 15000.0,
+        "stok": 70,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 3,
+          "nama": "Bumbu Racik"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 10,
+        "nama": "Bumbu Opor & Kari 100 gr",
+        "deskripsi": "Bumbu racik untuk opor dan kari, gurih dengan ketumbar, jintan, dan kapulaga.",
+        "harga": 16000.0,
+        "stok": 65,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 3,
+          "nama": "Bumbu Racik"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 11,
+        "nama": "Kayu Manis Batang 100 gr",
+        "deskripsi": "Kayu manis batang pilihan, aromanya manis dan hangat. Untuk minuman, kue, dan masakan.",
+        "harga": 18000.0,
+        "stok": 80,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 4,
+          "nama": "Rempah Utuh & Bubuk"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 12,
+        "nama": "Cengkeh Kering 100 gr",
+        "deskripsi": "Cengkeh kering kualitas baik, harum tajam. Cocok untuk bumbu masakan dan wedang.",
+        "harga": 30000.0,
+        "stok": 55,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 4,
+          "nama": "Rempah Utuh & Bubuk"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 13,
+        "nama": "Lada Hitam Butir 100 gr",
+        "deskripsi": "Lada hitam butir berkualitas, aroma tajam, dipanen dan dijemur alami.",
+        "harga": 15000.0,
+        "stok": 70,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 4,
+          "nama": "Rempah Utuh & Bubuk"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      },
+      {
+        "id": 14,
+        "nama": "Kunyit Bubuk Murni 100 gr",
+        "deskripsi": "Kunyit bubuk tanpa campuran, warna kuning pekat. Untuk bumbu, jamu, dan pewarna alami.",
+        "harga": 12000.0,
+        "stok": 90,
+        "gambar": null,
+        "gambar_url": null,
+        "kategori": {
+          "id": 4,
+          "nama": "Rempah Utuh & Bubuk"
+        },
+        "penjual": {
+          "id": 2,
+          "nama": "Dapur Rempah Kito"
+        }
+      }
+    ]
+  }
+}

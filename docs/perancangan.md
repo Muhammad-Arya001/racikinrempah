@@ -215,7 +215,7 @@ marketplace-tradisional/
 ## Menjalankan secara lokal (XAMPP/Laragon)
 
 1. Salin folder proyek ke `htdocs`.
-2. Buat database `db_marketplace` di phpMyAdmin, lalu impor `database.sql`.
+2. Buat database `rempahkito` di phpMyAdmin, lalu impor `database.sql`.
 3. Salin `config.sample.php` menjadi `config.php`. Saat diakses lewat `localhost`, file ini otomatis memakai `DB_HOST=localhost`, `DB_USER=root`, `DB_PASS` kosong, `DB_NAME=db_marketplace`; `BASE_URL` terdeteksi otomatis dari nama folder.
 4. Buka `http://localhost/marketplace-tradisional/`.
 

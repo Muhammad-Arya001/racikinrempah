@@ -1,0 +1,366 @@
+{
+  "info": {
+    "name": "RacikInRempah REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Pengujian Soal 12. Ubah variabel base_url sesuai folder di htdocs."
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/rempahkitofinal/api"
+    },
+    {
+      "key": "kode_pesanan",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. GET semua produk",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/produk.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "produk.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. GET detail produk",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/produk.php?id=1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "produk.php"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. GET produk tidak ditemukan",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 404\", function () { pm.response.to.have.status(404); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/produk.php?id=999",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "produk.php"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "999"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. GET id tidak valid",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/produk.php?id=abc",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "produk.php"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "abc"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. GET daftar kategori",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/kategori.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "kategori.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. POST buat pesanan",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 201\", function () { pm.response.to.have.status(201); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });",
+              "if (pm.response.code === 201) { pm.collectionVariables.set(\"kode_pesanan\", pm.response.json().data.kode_pesanan); }"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/pesanan.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "pesanan.php"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_user\": 3,\n  \"nama_penerima\": \"Budi Pembeli\",\n  \"alamat_kirim\": \"Jl. Melati No. 12, Bengkulu\",\n  \"no_hp\": \"081200000003\",\n  \"catatan\": \"Tolong dikemas rapi\",\n  \"items\": [\n    {\n      \"id_produk\": 1,\n      \"jumlah\": 2\n    },\n    {\n      \"id_produk\": 5,\n      \"jumlah\": 1\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "7. GET pesanan (kode dari langkah 6)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/pesanan.php?kode={{kode_pesanan}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "pesanan.php"
+          ],
+          "query": [
+            {
+              "key": "kode",
+              "value": "{{kode_pesanan}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "8. POST data tidak valid",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 422\", function () { pm.response.to.have.status(422); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/pesanan.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "pesanan.php"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nama_penerima\": \"\",\n  \"no_hp\": \"abc\",\n  \"items\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "9. POST stok tidak cukup",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 409\", function () { pm.response.to.have.status(409); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/pesanan.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "pesanan.php"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_user\": 3,\n  \"nama_penerima\": \"Budi Pembeli\",\n  \"alamat_kirim\": \"Jl. Melati No. 12, Bengkulu\",\n  \"no_hp\": \"081200000003\",\n  \"catatan\": \"Tolong dikemas rapi\",\n  \"items\": [\n    {\n      \"id_produk\": 5,\n      \"jumlah\": 9999\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "10. DELETE metode salah",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status 405\", function () { pm.response.to.have.status(405); });",
+              "pm.test(\"Response JSON\", function () { pm.response.to.be.json; });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/produk.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "produk.php"
+          ]
+        }
+      }
+    }
+  ]
+}

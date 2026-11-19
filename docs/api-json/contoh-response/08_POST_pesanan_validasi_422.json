@@ -1,0 +1,11 @@
+{
+  "status": "error",
+  "message": "Data pesanan tidak valid",
+  "errors": {
+    "id_user": "Wajib diisi (id pembeli, angka positif)",
+    "nama_penerima": "Wajib diisi, maksimal 100 karakter",
+    "alamat_kirim": "Wajib diisi",
+    "no_hp": "Tidak valid (8-20 digit)",
+    "items": "Minimal satu item: [{\"id_produk\":1,\"jumlah\":2}]"
+  }
+}

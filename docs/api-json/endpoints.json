@@ -1,0 +1,79 @@
+{
+  "nama_api": "RacikInRempah REST API",
+  "versi": "1.0",
+  "base_url": "http://localhost/<folder-project>/api",
+  "format": "application/json; charset=utf-8",
+  "endpoints": [
+    {
+      "no": 1,
+      "method": "GET",
+      "path": "/produk.php",
+      "fungsi": "Menampilkan seluruh produk",
+      "query": {
+        "kategori": "opsional, id kategori",
+        "q": "opsional, kata kunci nama produk"
+      },
+      "respons": [
+        200,
+        400,
+        404
+      ]
+    },
+    {
+      "no": 2,
+      "method": "GET",
+      "path": "/produk.php?id={id}",
+      "fungsi": "Menampilkan detail produk",
+      "query": {
+        "id": "wajib, angka positif"
+      },
+      "respons": [
+        200,
+        400,
+        404
+      ]
+    },
+    {
+      "no": 3,
+      "method": "GET",
+      "path": "/kategori.php",
+      "fungsi": "Menampilkan daftar kategori",
+      "respons": [
+        200,
+        404
+      ]
+    },
+    {
+      "no": 4,
+      "method": "POST",
+      "path": "/pesanan.php",
+      "fungsi": "Membuat pesanan baru",
+      "body": "lihat contoh-request/POST_pesanan_valid.json",
+      "respons": [
+        201,
+        400,
+        404,
+        409,
+        422
+      ]
+    },
+    {
+      "no": 5,
+      "method": "GET",
+      "path": "/pesanan.php?kode={kode_pesanan}",
+      "fungsi": "Melihat pesanan beserta item",
+      "query": {
+        "kode": "wajib, kode_pesanan"
+      },
+      "respons": [
+        200,
+        400,
+        404
+      ]
+    }
+  ],
+  "kode_error_umum": {
+    "405": "Metode tidak diizinkan",
+    "500": "Kesalahan server/database"
+  }
+}

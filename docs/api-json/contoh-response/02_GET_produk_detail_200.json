@@ -1,0 +1,22 @@
+{
+  "_catatan": "CONTOH dari data seed database.sql. Untuk laporan, gunakan response asli dari XAMPP Anda.",
+  "status": "success",
+  "message": "Detail produk ditemukan",
+  "data": {
+    "id": 1,
+    "nama": "Wedang Jahe Instan 10 Sachet",
+    "deskripsi": "Wedang jahe merah instan, hangat dan pedas manis. Seduh dengan air panas, cocok diminum saat cuaca dingin.",
+    "harga": 28000.0,
+    "stok": 60,
+    "gambar": null,
+    "gambar_url": null,
+    "kategori": {
+      "id": 1,
+      "nama": "Minuman Rempah"
+    },
+    "penjual": {
+      "id": 2,
+      "nama": "Dapur Rempah Kito"
+    }
+  }
+}

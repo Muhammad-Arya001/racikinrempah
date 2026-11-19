@@ -1,0 +1,27 @@
+{
+  "_catatan": "CONTOH dari data seed database.sql. Untuk laporan, gunakan response asli dari XAMPP Anda.",
+  "status": "success",
+  "message": "Daftar kategori berhasil diambil",
+  "data": [
+    {
+      "id": 1,
+      "nama": "Minuman Rempah",
+      "jumlah_produk": 4
+    },
+    {
+      "id": 2,
+      "nama": "Makanan Kaya Rempah",
+      "jumlah_produk": 3
+    },
+    {
+      "id": 3,
+      "nama": "Bumbu Racik",
+      "jumlah_produk": 3
+    },
+    {
+      "id": 4,
+      "nama": "Rempah Utuh & Bubuk",
+      "jumlah_produk": 4
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_catatan": "CONTOH dari data seed database.sql. Untuk laporan, gunakan response asli dari XAMPP Anda. Kode & tanggal akan berbeda.",
+  "status": "success",
+  "message": "Pesanan berhasil dibuat",
+  "data": {
+    "kode_pesanan": "INV261119A1B2C3",
+    "id_pesanan": 1,
+    "id_user": 3,
+    "nama_penerima": "Budi Pembeli",
+    "alamat_kirim": "Jl. Melati No. 12, Bengkulu",
+    "no_hp": "081200000003",
+    "catatan": "Tolong dikemas rapi",
+    "subtotal": 151000.0,
+    "diskon_persen": 0,
+    "diskon_nominal": 0.0,
+    "total": 151000.0,
+    "status": "menunggu",
+    "tanggal": "2026-11-19 17:00:00",
+    "items": [
+      {
+        "id_produk": 1,
+        "nama_produk": "Wedang Jahe Instan 10 Sachet",
+        "harga_satuan": 28000.0,
+        "jumlah": 2,
+        "subtotal": 56000.0
+      },
+      {
+        "id_produk": 5,
+        "nama_produk": "Rendang Daging Kering 250 gr",
+        "harga_satuan": 95000.0,
+        "jumlah": 1,
+        "subtotal": 95000.0
+      }
+    ]
+  }
+}
